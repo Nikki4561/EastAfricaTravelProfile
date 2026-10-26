@@ -1,0 +1,90 @@
+body {
+  background-color: #f9eef8;
+  font-family: Arial, sans-serif;
+  color: #594663;
+  margin: 0;
+  text-align: center;
+}
+
+header {
+  background-color: #d8c4e8;
+  padding: 35px 15px;
+}
+
+h1 {
+  color: #594663;
+}
+
+h2 {
+  color: #718b65;
+  margin-top: 35px;
+}
+
+main {
+  padding: 20px;
+}
+
+.countries {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+  margin: 35px 0;
+}
+
+.heart {
+  background-color: #e7a9c8;
+  color: #49364e;
+  border: none;
+  width: 125px;
+  height: 115px;
+  clip-path: path(
+    "M62 108 C40 88 5 65 5 35 C5 5 42 0 62 25 C82 0 120 5 120 35 C120 65 85 88 62 108 Z"
+  );
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.heart:hover {
+  background-color: #f7df92;
+}
+
+form {
+  background-color: #e5eddb;
+  padding: 25px;
+  border-radius: 20px;
+  max-width: 450px;
+  margin: 25px auto;
+}
+
+label {
+  display: block;
+  margin: 15px 0 5px;
+  font-weight: bold;
+}
+
+input,
+select,
+textarea {
+  width: 90%;
+  padding: 12px;
+  border: 1px solid #a9b99d;
+  border-radius: 10px;
+  font-family: Arial, sans-serif;
+}
+
+textarea {
+  height: 90px;
+}
+
+#memoryList {
+  max-width: 550px;
+  margin: 20px auto;
+}
+
+.memory-card {
+  background-color: #fff3c9;
+  border-radius: 15px;
+  padding: 15px;
+  margin: 15px;
+}

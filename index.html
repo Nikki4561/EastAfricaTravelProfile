@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dominique's East Africa Travel Diary</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>♡ Dominique's East Africa Travel Diary ♡</h1>
+      <p>Four countries, beautiful memories, and endless adventures!</p>
+    </header>
+
+    <main>
+      <h2>My Travel Adventures 🌍</h2>
+
+      <div class="countries">
+        <button class="heart" data-country="Tanzania">Tanzania</button>
+        <button class="heart" data-country="Kenya">Kenya</button>
+        <button class="heart" data-country="Seychelles">Seychelles</button>
+        <button class="heart" data-country="Mauritius">Mauritius</button>
+      </div>
+
+      <h2>♡ Add a Travel Memory</h2>
+
+      <form id="memoryForm">
+        <label for="country">Country:</label>
+        <select id="country" required>
+          <option value="">Choose a country</option>
+          <option>Tanzania</option>
+          <option>Kenya</option>
+          <option>Seychelles</option>
+          <option>Mauritius</option>
+        </select>
+
+        <label for="place">Place Visited:</label>
+        <input type="text" id="place" required />
+
+        <label for="memory">Favorite Memory:</label>
+        <textarea id="memory" required></textarea>
+
+        <button type="submit" class="heart">Save Memory</button>
+      </form>
+
+      <h2>♡ My Saved Memories</h2>
+      <div id="memoryList"></div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
