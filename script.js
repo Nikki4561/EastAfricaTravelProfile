@@ -2,10 +2,10 @@ const form = document.getElementById("memoryForm");
 const memoryList = document.getElementById("memoryList");
 const countrySelect = document.getElementById("country");
 
-// Get previously saved memories
+// gettin the most recent saved memories
 let memories = JSON.parse(localStorage.getItem("memories")) || [];
 
-// Display saved memories
+// showing the memeories tht weere saved 
 function showMemories() {
   memoryList.innerHTML = "";
 
@@ -25,7 +25,7 @@ function showMemories() {
   });
 }
 
-// Save a new memory
+// to save the new memory
 form.addEventListener("submit", function (event) {
   event.preventDefault();
 
@@ -50,7 +50,7 @@ form.addEventListener("submit", function (event) {
   form.reset();
 });
 
-// Heart buttons select a country
+// the heart buttons to be able to select the country 
 document.querySelectorAll(".countries .heart").forEach(function (button) {
   button.addEventListener("click", function () {
     countrySelect.value = button.dataset.country;
@@ -58,5 +58,5 @@ document.querySelectorAll(".countries .heart").forEach(function (button) {
   });
 });
 
-// Show memories when page opens
+
 showMemories();

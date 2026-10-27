@@ -88,3 +88,45 @@ textarea {
   padding: 15px;
   margin: 15px;
 }
+
+/* the pics of the trip of the 4 countries */
+
+.travel-gallery {
+  margin: 40px auto;
+  max-width: 1000px;
+}
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+
+.photo-card {
+  background-color: #e5eddb;
+  padding: 15px;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px #d8c4e8;
+}
+
+.photo-card img {
+  width: 100%;
+  height: 550px;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.photo-card h3 {
+  color: #594663;
+}
+
+.photo-card:hover {
+  background-color: #fff3c9;
+}
+
+@media (max-width: 600px) {
+  .photo-grid {
+    grid-template-columns: 1fr;
+  }
+}
