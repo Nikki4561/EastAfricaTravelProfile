@@ -3,13 +3,14 @@ const memoryList = document.getElementById("memoryList");
 const countrySelect = document.getElementById("country");
 
 // gettin the most recent saved memories
-let memories = JSON.parse(localStorage.getItem("memories")) || [];
+const manager = new MemoryManager(localStorage);
+let memories = manager.getMemories();
 
 // showing the memeories tht weere saved 
 function showMemories() {
   memoryList.innerHTML = "";
 
-  memories.forEach(function (item) {
+  memories.forEach(function (item, index) {
     const card = document.createElement("div");
     card.className = "memory-card";
 
@@ -21,6 +22,19 @@ function showMemories() {
 
     card.appendChild(title);
     card.appendChild(description);
+
+    // button 4 deleting mem
+    const deleteButton = document.createElement("button");
+    deleteButton.textContent = "Delete Memory";
+
+    deleteButton.addEventListener("click", function () {
+      if (manager.deleteMemory(index)) {
+        memories = manager.getMemories();
+        showMemories();
+      }
+    });
+
+    card.appendChild(deleteButton);
     memoryList.appendChild(card);
   });
 }
@@ -44,7 +58,7 @@ form.addEventListener("submit", function (event) {
     memory: memory,
   });
 
-  localStorage.setItem("memories", JSON.stringify(memories));
+  manager.saveMemories(memories);
 
   showMemories();
   form.reset();
