@@ -13,6 +13,19 @@ class MemoryManager {
   }
 
   // deletes unwanted mem
+  // filter mem by country
+  filterMemories(country) {
+    const memories = this.getMemories();
+
+    if (country === "all") {
+      return memories;
+    }
+
+    return memories.filter(function (item) {
+      return item.country === country;
+    });
+  }
+
   deleteMemory(index) {
     const memories = this.getMemories();
 

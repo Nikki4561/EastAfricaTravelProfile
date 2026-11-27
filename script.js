@@ -11,6 +11,12 @@ function showMemories() {
   memoryList.innerHTML = "";
 
   memories.forEach(function (item, index) {
+    const country = document.getElementById("filterCountry").value;
+
+    // only show selected country
+    if (country !== "all" && item.country !== country) {
+      return;
+    }
     const card = document.createElement("div");
     card.className = "memory-card";
 
@@ -74,3 +80,7 @@ document.querySelectorAll(".countries .heart").forEach(function (button) {
 
 
 showMemories();
+
+// updates mem when country changes
+document.getElementById("filterCountry")
+  .addEventListener("change", showMemories);
