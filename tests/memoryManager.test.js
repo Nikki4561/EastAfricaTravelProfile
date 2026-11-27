@@ -44,3 +44,39 @@ test("Cannot delete from empty list", () => {
   assert.equal(manager.deleteMemory(0), false);
   assert.equal(manager.getMemories().length, 0);
 });
+
+// test 4 country filter
+test("Filter mem by country", () => {
+  const manager = makeManager([
+    { country: "Kenya", place: "Nairobi" },
+    { country: "Tanzania", place: "Zanzibar" }
+  ]);
+
+  assert.deepEqual(manager.filterMemories("Kenya"), [
+    { country: "Kenya", place: "Nairobi" }
+  ]);
+});
+
+// test 4 all countries
+test("Show all saved mem", () => {
+  const manager = makeManager([
+    { country: "Kenya" },
+    { country: "Tanzania" },
+    { country: "Seychelles" },
+    { country: "Mauritius" }
+  ]);
+
+  assert.deepEqual(
+    manager.filterMemories("all"),
+    manager.getMemories()
+  );
+});
+
+// test 4 no saved mem
+test("No mem 4 selected country", () => {
+  const manager = makeManager([
+    { country: "Kenya" }
+  ]);
+
+  assert.deepEqual(manager.filterMemories("Mauritius"), []);
+});
